@@ -26,7 +26,7 @@ const goodFundList = [];
   * 接口：https://danjuanfunds.com/djapi/v3/filter/fund?type=1&order_by=3y&size=20&page=1
   */
  const getFundList = () => {
-   const SIZE = 100; // 300就可以查询出来了， SIZE不要大于10000什么的，避免把接口搞挂了，有法律责任
+   const SIZE = 300; // 300就可以查询出来了， SIZE不要大于10000什么的，避免把接口搞挂了，有法律责任
    const page = 1;
    const TYPE = 1
    const order_by = '3y'
@@ -70,8 +70,9 @@ const getFilterData = (myJson) => {
   const fundDerived = resData.fund_derived // 收益
   const unitNav = fundDerived.unit_nav // 历史累计收益
   const keepTime = myJson.keepTime // 管理时间
+  const history = fundDerived.yield_history // 历史时间
   const fundDetail = {
-   startDate,code,manager,totalMoney,fullName,company,unitNav, fundDerived,keepTime
+    code,unitNav, startDate,manager,keepTime,totalMoney,fullName,company, history
   }
   return fundDetail
 }
