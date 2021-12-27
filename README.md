@@ -13,3 +13,5 @@
     - deno run --allow-all denoFund.js
 # 运行node的代码
  - node nodeFund.js
+
+![avatar](/基金筛选.png)
